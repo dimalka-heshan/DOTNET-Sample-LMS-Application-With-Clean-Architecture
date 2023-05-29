@@ -14,5 +14,7 @@ namespace LMS.Core.Entities
         public Guid StudentId { get; set; }
         public Guid SubjectId { get; set; }
         public int Marks { get; set; }
+
+        public int DD { get; set; }
     }
 }
