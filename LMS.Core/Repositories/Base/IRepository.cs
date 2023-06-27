@@ -11,10 +11,13 @@ namespace LMS.Core.Repositories.Base
     {
         Task<IReadOnlyList<T>> GetAllAsync();
         Task<T> GetByIdAsync(Guid id);
-        Task<T> AddAsync(T entity);
-        Task<T> UpdateAsync(T entity);
+        void Add(T entity);
+        void Update(T entity);
+        void Delete(T entity);
 
-        Task DeleteAsync(T entity);
+        //Task<T> AddAsync(T entity);
+        //Task<T> UpdateAsync(T entity);
+        //Task DeleteAsync(T entity);
 
     }
 }

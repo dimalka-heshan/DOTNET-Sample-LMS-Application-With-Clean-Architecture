@@ -3,11 +3,7 @@ using LMS.Core.Repositories;
 using LMS.Infrastructure.Data;
 using LMS.Infrastructure.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace LMS.Infrastructure.Repositories
 {
@@ -17,20 +13,24 @@ namespace LMS.Infrastructure.Repositories
         {
         }
 
-        public override async Task<Teacher> AddAsync(Teacher entity)
+        public override void Add(Teacher entity)
         {
-            await _dbContext.Set<Teacher>().AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
-            return entity;
+            _dbContext.Set<Teacher>().Add(entity);
         }
-
-        public override async Task DeleteAsync(Teacher entity)
+        public override void Delete(Teacher entity)
         {
             _dbContext.Set<Teacher>().Remove(entity);
-            await _dbContext.SaveChangesAsync();
         }
 
-        public  override async Task<IReadOnlyList<Teacher>> GetAllAsync()
+        public override void Update(Teacher entity)
+        {
+            _dbContext.Set<Teacher>().Update(entity);
+        }
+
+
+        
+
+        public override async Task<IReadOnlyList<Teacher>> GetAllAsync()
         {
             return await _dbContext.Set<Teacher>().ToListAsync();
         }
@@ -40,11 +40,23 @@ namespace LMS.Infrastructure.Repositories
             return await _dbContext.Set<Teacher>().FirstAsync();
         }
 
-        public override async Task<Teacher> UpdateAsync(Teacher entity)
-        {
-            _dbContext.Entry(entity).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
-            return entity;
-        }
+        //public override async Task<Teacher> AddAsync(Teacher entity)
+        //{
+        //    await _dbContext.Set<Teacher>().AddAsync(entity);
+        //    await _dbContext.SaveChangesAsync();
+        //    return entity;
+        //}
+
+        //public override async Task DeleteAsync(Teacher entity)
+        //{
+        //    _dbContext.Set<Teacher>().Remove(entity);
+        //    await _dbContext.SaveChangesAsync();
+        //}
+        //public override async Task<Teacher> UpdateAsync(Teacher entity)
+        //{
+        //    _dbContext.Entry(entity).State = EntityState.Modified;
+        //    await _dbContext.SaveChangesAsync();
+        //    return entity;
+        //}
     }
 }

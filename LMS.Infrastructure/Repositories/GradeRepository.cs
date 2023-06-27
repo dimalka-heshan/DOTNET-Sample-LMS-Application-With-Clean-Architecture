@@ -3,11 +3,6 @@ using LMS.Core.Repositories;
 using LMS.Infrastructure.Data;
 using LMS.Infrastructure.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LMS.Infrastructure.Repositories
 {
@@ -17,19 +12,21 @@ namespace LMS.Infrastructure.Repositories
         {
         }
 
-        public override async Task<Grade> AddAsync(Grade entity)
+        public override void Add(Grade entity)
         {
-            await _dbContext.Set<Grade>().AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
-            return entity;
+            _dbContext.Set<Grade>().Add(entity);
         }
-
-        public override async Task DeleteAsync(Grade entity)
+        public override void Delete(Grade entity)
         {
             _dbContext.Set<Grade>().Remove(entity);
-            await _dbContext.SaveChangesAsync();
         }
 
+        public override void Update(Grade entity)
+        {
+            _dbContext.Set<Grade>().Update(entity);
+        }
+
+        
         public override async Task<IReadOnlyList<Grade>> GetAllAsync()
         {
             return await _dbContext.Set<Grade>().ToListAsync();
@@ -50,11 +47,24 @@ namespace LMS.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public override async Task<Grade> UpdateAsync(Grade entity)
-        {
-            _dbContext.Entry(entity).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
-            return entity;
-        }
+        //public override async Task<Grade> AddAsync(Grade entity)
+        //{
+        //    await _dbContext.Set<Grade>().AddAsync(entity);
+        //    await _dbContext.SaveChangesAsync();
+        //    return entity;
+        //}
+
+        //public override async Task DeleteAsync(Grade entity)
+        //{
+        //    _dbContext.Set<Grade>().Remove(entity);
+        //    await _dbContext.SaveChangesAsync();
+        //}
+
+        //public override async Task<Grade> UpdateAsync(Grade entity)
+        //{
+        //    _dbContext.Entry(entity).State = EntityState.Modified;
+        //    await _dbContext.SaveChangesAsync();
+        //    return entity;
+        //}
     }
 }

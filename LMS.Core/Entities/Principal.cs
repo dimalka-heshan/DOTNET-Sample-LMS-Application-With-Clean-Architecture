@@ -1,16 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LMS.Core.Primitives;
+
 
 namespace LMS.Core.Entities
 {
-    public class Principal
+    public class Principal:IAuditableEntity
     {
-        public Guid PrincipalId { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public Principal(Guid PrincipalId, string Name, string Email, string Password)
+        {
+            this.PrincipalId = PrincipalId;
+            this.Name = Name;
+            this.Email = Email;
+            this.Password = Password;
+        }
+        public Guid PrincipalId { get; private set; }
+        public string? Name { get; private set; }
+        public string? Email { get; private set; }
+        public string? Password { get; private set; }
+        public DateTime Created { get; set; }
+        public Guid CreatedBy { get; set; }
+        public DateTime? Modified { get; set; }
+        public Guid? ModifiedBy { get; set; }
     }
 }

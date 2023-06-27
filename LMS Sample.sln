@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.API", "LMS.API\LMS.API.csproj", "{2535AECC-66FE-447D-866B-2C52F6AD7200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMS.API", "LMS.API\LMS.API.csproj", "{2535AECC-66FE-447D-866B-2C52F6AD7200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Core", "LMS.Core\LMS.Core.csproj", "{9FBFA4DD-8778-4B2B-8870-F708B43F2721}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMS.Core", "LMS.Core\LMS.Core.csproj", "{9FBFA4DD-8778-4B2B-8870-F708B43F2721}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Application", "LMS.Application\LMS.Application.csproj", "{483E2735-4D61-4D31-A82A-644334353096}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMS.Application", "LMS.Application\LMS.Application.csproj", "{483E2735-4D61-4D31-A82A-644334353096}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Infrastructure", "LMS.Infrastructure\LMS.Infrastructure.csproj", "{8F30B6A8-595F-468D-A168-6ED292E96162}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LMS.Infrastructure", "LMS.Infrastructure\LMS.Infrastructure.csproj", "{8F30B6A8-595F-468D-A168-6ED292E96162}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

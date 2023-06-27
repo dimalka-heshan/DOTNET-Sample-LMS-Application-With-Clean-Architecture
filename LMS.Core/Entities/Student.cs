@@ -1,20 +1,27 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
+using LMS.Core.Primitives;
+
 
 namespace LMS.Core.Entities
 {
-    public class Student
+    public class Student:IAuditableEntity
     {
-        
-        public Guid StudentId { get; set; }
-        public string Name { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string ContactDetails { get; set; }
-        public string Email { get; set; }
+        public Student(Guid StudentId, string Name, DateTime DateOfBirth, string ContactDetails, string Email)
+        {
+            this.StudentId = StudentId;
+            this.Name = Name;
+            this.DateOfBirth = DateOfBirth;
+            this.ContactDetails = ContactDetails;
+            this.Email = Email;
+        }
+        public Guid StudentId { get; private set; }
+        public string Name { get; private set; }
+        public DateTime DateOfBirth { get; private set; }
+        public string ContactDetails { get; private set; }
+        public string Email { get; private set; }
+        public DateTime Created { get; set; }
+        public Guid CreatedBy { get; set; }
+        public DateTime? Modified { get; set; }
+        public Guid? ModifiedBy { get; set; }
     }
 }
